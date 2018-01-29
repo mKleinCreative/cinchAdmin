@@ -31,7 +31,148 @@
 .roboto {
   font-family: 'Roboto Medium', sans-serif;
 }
+.text-uppercase {
+  text-transform: uppercase;
+}
 
+body {
+  background-color: #FAFAFA;
+  font-family: "Roboto Medium"; 
+}
+
+.side-menu {
+  position: fixed;
+  padding-top: 8px;
+  width: 68px;
+  height: 100%;
+  z-index: 2; }
+  .side-menu .list-item {
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    height: 56px;
+    box-sizing: border-box; } 
+    .side-menu .list-item.active a {
+      border-left: 2px solid #1875F0; } 
+    .side-menu .list-item a {
+      display: inline-block;
+      width: 100%;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-sizing: border-box; }
+    .side-menu .list-item.logo {
+      margin-bottom: 32px;
+    }
+    .side-menu .list-item.logo a {
+      background-image: url("../../public/images/CinchLogoSmall.png");
+    }
+    .side-menu .list-item.home,
+    .group,
+    .login
+    .email,
+    .merchandise,
+    .finance,
+    .calendar  {
+      margin-bottom: 3px;
+    }
+    .side-menu .list-item.home a {
+      background-image: url("../../public/images/HomeIcon.png");
+    }
+    .side-menu .list-item.group a {
+      background-image: url("../../public/images/Group.png");
+    }
+    .side-menu .list-item.login a {
+      background-image: url("../../public/images/login icon.png");
+    }
+    .side-menu .list-item.email a {
+      background-image: url("../../public/images/email icon.png");
+    }
+    .side-menu .list-item.merchandise a {
+      background-image: url("../../public/images/Shirt Icon.png");
+    }
+    .side-menu .list-item.finance a {
+      background-image: url("../../public/images/DollarSign.png");
+    }
+    .side-menu .list-item.calendar a {
+      background-image: url("../../public/images/calendar icon.png");
+    }
+
+.nav-bar {
+  height: 91px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  text-align: right;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #CCCCCC;
+  background-color: white;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+} .nav-bar-profile {
+  width: 174px;
+  margin-right: 37px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  letter-spacing: .8px;
+  color: #999999;
+} .nav-bar-search {
+  height: 50px;
+  margin-left: 40px;
+  margin-top: 20px;
+  width: 190px;
+  border: 2px solid rgba(0, 0, 0, 0.07);
+  border-radius: 40px;
+} .nav-bar-search::placeholder {
+  background-image: url("../../public/images/search icon.png");
+  background-repeat: no-repeat;
+  background-position-x: 20px;
+  padding-left: 50px;
+  color: rgba(0,0,0,.2);
+  font-weight: 600;  
+}
+
+.content {
+  width: 280px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 40px;
+  font-size: .9em;
+  background-image: url("../../public/images/menu icon.png");
+  background-repeat: no-repeat;
+  background-position: 314px 20px;
+} .content-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+} .content-body .content-ratio {
+  color: rgba(0,0,0,.6);
+  font-size: 1.2em;
+} .content-body .content-percent.positive {
+  color: #50D166;
+  font-size: .8em;
+}.content-header {
+  color: rgba(155,155,155,.7);
+} 
+
+.content,
+.side-menu,
+.nav-bar {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+}
+
+/*LOGIN STYLES*/
 .login-container {
   display: flex;
   flex-direction: column;
@@ -79,10 +220,6 @@
   padding-left: 18px;
 }
 
-.text-uppercase {
-  text-transform: uppercase;
-}
-
 .login-input-title {
   font-size: .7em;
   letter-spacing: 1.2px;
@@ -95,4 +232,19 @@
   border-radius: 7px;
   color: rgba(255,255,255,.7);
   letter-spacing: 2px;
+}
+
+/*DASHBOARD STYLING*/
+
+.dashboard-body::after {
+  background-color: rgba(0,0,0,.9);
+}
+
+.dashboard-body {
+  margin: 0px;
+}
+
+.dashboard-container {
+  width: 1141px;
+  margin-left: 150px;
 }

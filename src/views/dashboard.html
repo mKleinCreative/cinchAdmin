@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../styles/master.css"></link>
+  <script src="../assets/javascript/jquery.min.js"></script>
+  <script src="../assets/javascript/chart.min.js"></script>
   <title>Dashboard</title>
 </head>
 <body class="dashboard-body">
@@ -44,18 +46,201 @@
         <img src="../../public/images/arrow icon.png" alt="Drop Down Menu">
       </div>
     </div>
-    <div class="content roboto">
-      <div class="content-header">Monthly Active iOS Users</div>
-      <div class="content-body">
-        <div>
-          <p class="content-ratio">1:31</p>
-          <p class="content-percent positive">+16.7%</p>
+    <div class="content-container">
+      <div class="content roboto">
+        <div class="content-header">Monthly Active iOS Users</div>
+        <div class="content-body">
+          <div>
+            <p class="content-ratio">1:31</p>
+            <p class="content-percent positive">+16.7%</p>
+          </div>
+          <div class="content-chart">
+            <canvas class="chart" width="180" height="80"></canvas>
+          </div>
         </div>
-        <div class="content-chart">
-          <img src="../../public/images/chart.png" alt="chart">
+      </div>
+      <div class="content roboto">
+        <div class="content-header">Monthly Active Android Users</div>
+        <div class="content-body">
+          <div>
+            <p class="content-ratio">1:31</p>
+            <p class="content-percent positive">+16.7%</p>
+          </div>
+          <div class="content-chart">
+            <canvas class="chart" width="180" height="80"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="content roboto">
+        <div class="content-header">Page Views</div>
+        <div class="content-body">
+          <div>
+            <p class="content-ratio">1:31</p>
+            <p class="content-percent positive">+16.7%</p>
+          </div>
+          <div class="content-chart">
+            <canvas class="chart" width="180" height="80"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-performance-container">
+      <div class="dashboard-performance-headline">
+        <p>Key Performance Indicators</p>
+        <img src="../../public/images/menu icon.png" alt="menu">
+      </div>
+      <div class="dashboard-performance-information">
+        <div class="dashboard-performance-sidebar">
+          <div class="dashboard-performance-info">
+            <div class="dashboard-info-title roboto">Revenue</div>
+            <div class="dashboard-numbers-container">
+              <p class="dashboard-info-numbers">$ 8749</p>
+              <p class="dashboard-info-percent positive">+54%</p>
+            </div>
+          </div>
+          <div class="dashboard-performance-info">
+            <div class="dashboard-info-title roboto">Registrations</div>
+            <div class="dashboard-numbers-container">
+              <p class="dashboard-info-numbers">65</p>
+              <p class="dashboard-info-percent positive">+21%</p>
+            </div>
+          </div>
+          <div class="dashboard-performance-info">
+            <div class="dashboard-info-title roboto">Profit</div>
+            <div class="dashboard-numbers-container">
+              <p class="dashboard-info-numbers">$ 117.62</p>
+              <p class="dashboard-info-percent negative">-11%</p>
+            </div>
+          </div>
+          <div class="dashboard-performance-info">
+            <div class="dashboard-info-title roboto">Average Cost</div>
+            <div class="dashboard-numbers-container">
+              <p class="dashboard-info-numbers">$ 33.11</p>
+              <p class="dashboard-info-percent negative">-11%</p>
+            </div>
+          </div>
+          <div class="dashboard-performance-info">
+            <div class="dashboard-info-title roboto">Refunded</div>
+            <div class="dashboard-numbers-container">
+              <p class="dashboard-info-numbers">25%</p>
+              <p class="dashboard-info-percent negative">-11%</p>
+            </div>
+          </div>
+          <div class="dashboard-performance-info">
+            <div class="dashboard-info-title roboto">Growth</div>
+            <div class="dashboard-numbers-container">
+              <p class="dashboard-info-numbers">25%</p>
+              <p class="dashboard-info-percent negative">-11%</p>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-performance-chart content-chart">
+          <canvas class="chart" width="800" height="300"></canvas>
+
         </div>
       </div>
     </div>
   </div>
+  <script>
+    var programs = [100, 79, 59, 56, 49, 46];
+
+    for (var x = 0; x < programs.length; x++) {
+      $("#program-" + (x + 1) + " .bar").width(250 * programs[x] / 100);
+    }
+    console.log('ctx (╯°□°)╯︵ ┻━┻ ', document.querySelectorAll(".chart"))
+    var ctx = document.querySelectorAll(".chart")
+    ctx.forEach( (chartEle, index) => {
+      chartEle = chartEle.getContext("2d");
+      /*** Gradient ***/
+      console.log('chartEle (╯°□°)╯︵ ┻━┻ ', chartEle)
+      var gradient = chartEle.createLinearGradient(0, 0, 0, 500);
+      gradient.addColorStop(0.3, 'rgba(225,238,255,1)');
+      gradient.addColorStop(1, 'rgba(225,238,255,0)');
+      /***************/
+      if(index === 3) {
+        var data = {
+          labels: ["1 Jan", "1 Feb", "1 Mar", "1 Apr", "1 May", "1 Jun", "1 Jul", "1 Aug", "1 Sep"],
+          datasets: [{
+            label: "Orders",
+            backgroundColor: gradient, // Put the gradient here as a fill color
+            borderColor: "#1875F0",
+            strokeColor: "#ff6c23",
+            pointColor: "#fff",
+            pointStrokeColor: "#ff6c23",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "#ff6c23",
+            lineTension: 0,
+            data: [3000, 6100, 3900, 5500, 6300, 4300, 5000, 4500, 5700]
+          }]
+        };
+      } else {
+        var data = {
+          display: false,
+          labels: false,
+          labelString: false,
+          datasets: [{
+            label: "",
+            backgroundColor: gradient, // Put the gradient here as a fill color
+            borderColor: "#1875F0",
+            pointColor: "#fff",
+            strokeColor: "#ff6c23",
+            lineTension: 0,
+            data: [3000, 6100, 3900, 5500, 6300, 4300, 5000, 4500, 5700]
+          }]
+        };
+
+      }
+      if (index === 3) {
+        var options = {
+          responsive: true,
+          datasetStrokeWidth: 3,
+          pointDotStrokeWidth: 4,
+          tooltipFillColor: "rgba(0,0,0,0.8)",
+          tooltipFontStyle: "bold",
+          tooltipTemplate: "<%if (label){%><%=label + ' hod' %>: <%}%><%= value + '°C' %>",
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontColor: "#B3B3B3"
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                callback: function (value, index, values) {
+                  return value / 1000 + 'K';
+                },
+                fontColor: "#B3B3B3"
+              }
+            }]
+          },
+          legend: {
+
+          }
+        }
+    } else {
+      var options = {
+          responsive: true,
+          title: {
+            display: false
+          },
+          legend: {
+            display: false
+          },
+          scales: {
+            display: false
+          },
+          scaleShowGridLines: false,
+          scaleShowVerticalLines: false,
+          showTooltips: false
+      }
+    }
+    var myLineChart = new Chart(chartEle, {
+      type: 'line',
+      data: data,
+      options: options
+    });
+  })
+  </script>
 </body>
 </html>

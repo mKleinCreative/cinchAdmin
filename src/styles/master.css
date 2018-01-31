@@ -137,7 +137,11 @@ body {
   font-weight: 600;  
 }
 
-.content {
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+} .content {
   width: 280px;
   height: 80px;
   display: flex;
@@ -158,18 +162,23 @@ body {
 } .content-body .content-ratio {
   color: rgba(0,0,0,.6);
   font-size: 1.2em;
-} .content-body .content-percent.positive {
-  color: #50D166;
-  font-size: .8em;
-}.content-header {
+} .content-header {
   color: rgba(155,155,155,.7);
 } 
 
+.positive {
+  color: #50D166;
+  font-size: .8em;
+} .negative {
+  color: #F13A30;
+  font-size: .8em;
+}
+.dashboard-performance-container,
 .content,
 .side-menu,
 .nav-bar {
   background-color: #FFFFFF;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5); 
 }
 
 /*LOGIN STYLES*/
@@ -247,4 +256,85 @@ body {
 .dashboard-container {
   width: 1141px;
   margin-left: 150px;
+}
+
+.dashboard-performance-container {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.dashboard-performance-information {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard-performance-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+}
+.dashboard-performance-headline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-radius: 8px;
+}
+.dashboard-performance-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 0px 32px;
+}
+
+.dashboard-info-title {
+  margin-right: 35px;
+  display: flex; 
+  justify-content: flex-start;
+  width: 138px;
+  font-size: .7em;
+  letter-spacing: .3px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 800;
+}
+
+.dashboard-numbers-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.dashboard-info-percent {
+  margin-left: 10px;
+}
+.dashboard-info-numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowarp;
+}
+
+.dashboard-performance-headline {
+  padding: 0px 17px 0px 30px;
+  font-size: .9em;
+  color: #666666
+}
+
+.dashboard-performance-headline{
+  border: 2px solid #F6F6F6;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  height: 60px;
+}
+.dashboard-performance-info {
+  border-bottom: 2px solid #F6F6F6;
+  border-right: 2px solid #F6F6F6;
 }

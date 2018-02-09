@@ -499,7 +499,7 @@ body {
   margin-left: 50px;
   color: rgba(0, 0, 0, 0.4)
 }
-.organizations-list-checkbox {
+.checkbox {
   border: 2px solid rgba(0, 0, 0, 0.08);
   width: 15px;
   height: 15px;
@@ -509,7 +509,7 @@ body {
 }.active{
   border: 2px solid rgba(25, 100, 255, 0.7);
   background-color: rgba(25, 100, 255, 0.7);
-}.organizations-list-view-button {
+}.view-button {
   font-size: .6em;
   padding: 10px 35px;
   background-color: white;
@@ -519,8 +519,80 @@ body {
   letter-spacing: .8px;
   border-radius: 4px;
   font-family: 'Roboto Black'
-}.organizations-list-image {
+}.users-list-image,
+.organizations-list-image {
   width: 40px;
   display: flex;
   align-self: center;
+}
+
+
+/*USERS STYLING*/
+
+.users-container {
+  width: 1141px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.users-main-content {
+  width: 1134px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.users-list,
+.selection-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.selection-panel {
+  width: 262px;
+  height: 252px;
+  border-radius: 4px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);  
+}.selection-panel-item {
+  padding: 23px 37px;
+  font-size: .8em;
+  background-color: white;
+  border-bottom: 2px solid rgba(0,0,0,.05);
+}
+.users-list {
+  width: 862px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5); 
+}
+.users-list-header,
+.users-list-user,
+.users-list-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(0,0,0,.05);
+  align-items: center;
+  flex-direction: row;
+  padding: 21px 15px;
+  height: 19px;
+}.users-list-pagination,
+.users-list-pagination-pages,
+.users-list-nav-search-parameters {
+  display: flex;
+  flex-direction: row;
+}
+.users-list-nav-title {
+  font-size: .9em;
+}
+.users-list-header {
+  font-size: .8em;
+  justify-content: flex-start;
+}.users-list-header div {
+  padding-right: 55px;
+}
+.users-list-user {
+  justify-content: space-between;
+  font-size: .8em;
+}
+.users-list-user div {
+  
 }
